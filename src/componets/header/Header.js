@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/components/Header.scss';
 
 import { Link } from "react-router-dom";
 
@@ -10,7 +11,7 @@ import cart from '../../assets/icons/fast-cart.png';
 
 function Header() {
   return (
-    <nav>
+    <nav className='nav'>
       <div>
         <Link to={"/"} ><img src={logo} alt='website logo'/></Link>
         <div>
