@@ -1,9 +1,12 @@
-import React from 'react'
-import { Link } from "react-router-dom"
-import logo from '../../assets/images/logo.png'
-import search from '../../assets/icons/search.svg'
-import pin from '../../assets/icons/map-pin.png'
-import cart from '../../assets/icons/fast-cart.png'
+import React from 'react';
+
+import { Link } from "react-router-dom";
+
+import logo from '../../assets/images/logo.png';
+import search from '../../assets/icons/search.svg';
+import pin from '../../assets/icons/map-pin.png';
+import cart from '../../assets/icons/fast-cart.png';
+
 
 function Header() {
   return (

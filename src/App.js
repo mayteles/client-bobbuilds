@@ -1,8 +1,9 @@
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from './componets/header/Header';
 import OrderHistory from './componets/OrderHistory/OrderHistory';
 import Cart from './componets/Cart/Cart';
+
 
 function App() {
   return (
