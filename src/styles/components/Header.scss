@@ -1,0 +1,20 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(157, 220, 247);
+    &__b1 {
+        display: flex;
+        &-sub {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+        }
+    }
+    &__b3 {
+        display: flex;
+    }
+}
+
+.link-no-decoration {
+    text-decoration: none;
+}
