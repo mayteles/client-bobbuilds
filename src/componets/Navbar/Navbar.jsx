@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Navbar.scss";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const nav = useNavigate();
   const token = localStorage.getItem("user-ecommerce-auth-token");
+
+
   const handleLogout = () => {
     if (token) {
       localStorage.removeItem("user-ecommerce-auth-token");
