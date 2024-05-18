@@ -7,6 +7,7 @@ import { API_URL } from "../../utils/api";
 const ProductPage = () => {
   const [product, setProduct] = useState();
   const { id } = useParams();
+  const token = localStorage.getItem("user-ecommerce-auth-token");
 
   useEffect(() => {
     fetchProduct();
@@ -22,6 +23,10 @@ const ProductPage = () => {
   };
 
   const handleAddProductInCart = async () => {
+    if (!token) {
+      alert("Please Login To add Product in cart");
+      return;
+    }
     try {
       let data = await axios.post(
         `${API_URL}/cart`,
@@ -41,7 +46,6 @@ const ProductPage = () => {
     }
   };
 
- 
   return (
     <div class="product-page-container">
       <div className="product-item-image">
