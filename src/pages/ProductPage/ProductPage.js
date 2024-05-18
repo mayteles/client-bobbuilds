@@ -21,6 +21,27 @@ const ProductPage = () => {
     }
   };
 
+  const handleAddProductInCart = async () => {
+    try {
+      let data = await axios.post(
+        `${API_URL}/cart`,
+        {
+          product: product._id,
+          quantity: 1,
+        },
+        {
+          headers: {
+            Authorization: localStorage.getItem("user-ecommerce-auth-token"),
+          },
+        }
+      );
+      alert(data.data.message);
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+
+ 
   return (
     <div class="product-page-container">
       <div className="product-item-image">
@@ -35,7 +56,9 @@ const ProductPage = () => {
         <p class="product-description-right">{product?.description}</p>
         <p class="product-price-right">${product?.price}</p>
         <p class="product-category-right">{product?.category}</p>
-        <button class="add-to-cart-button">Add to Cart</button>
+        <button onClick={handleAddProductInCart} class="add-to-cart-button">
+          Add to Cart
+        </button>
       </div>
     </div>
   );
