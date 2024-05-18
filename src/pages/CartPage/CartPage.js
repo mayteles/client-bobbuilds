@@ -3,7 +3,7 @@ import "./CartPage.scss";
 import CartItem from "../../componets/Cart/CartItem";
 import axios from "axios";
 import { API_URL } from "../../utils/api";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const [cartProducts, setCartProducts] = useState([]);

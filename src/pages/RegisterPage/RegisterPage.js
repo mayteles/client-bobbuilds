@@ -27,6 +27,7 @@ const RegisterPage = () => {
       let data = await axios.post(`${API_URL}/auth/register`, userData);
       alert(data.data.message);
       setUserData(defaultData);
+      nav("/login")
     } catch (error) {
       console.log(error);
     }

@@ -1,0 +1,21 @@
+.single-order {
+  border-radius: 8px; // Rounded corners for a softer look
+
+  padding: 0.625rem;
+  margin-bottom: 1rem; // Space between order items
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+  transition: background-color 0.3s ease; // Smooth transition for hover effect
+}
+
+.total-order-value {
+  margin-top: 1rem; // Spacing above the total order value
+  text-align: right; // Align text to the right
+    color:  #349DE3;
+    font-weight: bold;
+  &::before {
+    content: "Total Order Value: ";
+    font-weight: normal; // Normal weight for the prefix text
+  }
+
+  // Highlighting the value part for emphasis
+}
