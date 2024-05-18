@@ -36,7 +36,7 @@ const CartPage = () => {
       console.log(el);
       value = value + el.product.price * el.quantity;
     }
-    setCartValue(Math.ceil(value));
+    setCartValue(Math.floor(value));
   };
 
   const handleCheckout = async () => {
