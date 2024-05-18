@@ -13,11 +13,20 @@ const RegisterPage = () => {
   const nav = useNavigate();
 
   const handleUserRegister = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
+      if (
+        userData.email === "" ||
+        userData.password === "" ||
+        userData.name === ""
+      ) {
+        alert("Please Fill all Fields");
+        return;
+      }
+
       let data = await axios.post(`${API_URL}/auth/register`, userData);
-      alert(data.data.message)
-      setUserData(defaultData)
+      alert(data.data.message);
+      setUserData(defaultData);
     } catch (error) {
       console.log(error);
     }
@@ -44,7 +53,9 @@ const RegisterPage = () => {
           placeholder="Enter Password"
           value={userData.password}
           type="password"
-          onChange={(e) => setUserData({ ...userData, password: e.target.value })}
+          onChange={(e) =>
+            setUserData({ ...userData, password: e.target.value })
+          }
         />
         <button onClick={handleUserRegister}>Register</button>
         <p className="clickable-paragraph" onClick={() => nav("/login")}>
