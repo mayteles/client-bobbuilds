@@ -13,6 +13,14 @@ const LoginPage = () => {
 
   const handleLoginUser = async (e) => {
     e.preventDefault();
+    if (
+      userData.email === "" ||
+      userData.password === "" ||
+      userData.name === ""
+    ) {
+      alert("Please Fill all Fields");
+      return;
+    }
     try {
       let data = await axios.post(`${API_URL}/auth/login`, userData);
       localStorage.setItem("user-ecommerce-auth-token", data.data.token);

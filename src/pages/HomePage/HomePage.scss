@@ -1,0 +1,38 @@
+/* src/styles/SearchBar.scss */
+
+$primary-color: #3498db;
+$input-border-color: #ccc;
+$input-focus-color: $primary-color;
+$input-bg-color: #f9f9f9;
+$input-placeholder-color: #aaa;
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  .search-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 0.75rem 1rem;
+    margin: 0 auto;
+    border: 2px solid $input-border-color;
+    border-radius: 25px;
+    background-color: $input-bg-color;
+    color: #333;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+
+    &:focus {
+      border-color: $input-focus-color;
+      outline: none;
+      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+    }
+  }
+}
